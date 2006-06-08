@@ -22,7 +22,8 @@ Plugin for Cacti - This plugin allows you to see reports based off
 the data in your Netflow flows.
 
 %description -l pl
-Wtyczka do Cacti dodaj±ca mo¿liwo¶æ ...
+Wtyczka do Cacti pozwalaj±ca ogl±daæ raporty w oparciu o dane z
+przep³ywów Netflow.
 
 %prep
 %setup -q -n %{namesrc}

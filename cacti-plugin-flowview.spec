@@ -1,7 +1,7 @@
 %define		namesrc	 flowview
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti -  Flowview
-Summary(pl.UTF-8):   Wtyczka do Cacti -  Flowview
+Summary(pl.UTF-8):	Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-flowview
 Version:	0.3
 Release:	1

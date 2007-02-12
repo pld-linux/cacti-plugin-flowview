@@ -1,7 +1,7 @@
 %define		namesrc	 flowview
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti -  Flowview
-Summary(pl):	Wtyczka do Cacti -  Flowview
+Summary(pl.UTF-8):   Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-flowview
 Version:	0.3
 Release:	1
@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Plugin for Cacti - This plugin allows you to see reports based off
 the data in your Netflow flows.
 
-%description -l pl
-Wtyczka do Cacti pozwalaj±ca ogl±daæ raporty w oparciu o dane z
-przep³ywów Netflow.
+%description -l pl.UTF-8
+Wtyczka do Cacti pozwalajÄ…ca oglÄ…daÄ‡ raporty w oparciu o dane z
+przepÅ‚ywÃ³w Netflow.
 
 %prep
 %setup -q -n %{namesrc}

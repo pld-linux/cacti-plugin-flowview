@@ -3,12 +3,12 @@
 Summary:	Plugin for Cacti -  Flowview
 Summary(pl.UTF-8):	Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-flowview
-Version:	0.3
+Version:	0.4
 Release:	1
 License:	GPL
 Group:		Applications/WWW
-Source0:	http://cactiusers.net/downloads/plugins/%{namesrc}-%{version}.tar.gz
-# Source0-md5:	1460ccd8e298401c803b8d472d3c0177
+Source0:	http://mirror.cactiusers.org/downloads/plugins/%{namesrc}-%{version}.zip
+# Source0-md5:	858dcbeb72e206021f8197424492641b
 URL:		http://www.cactiusers.org/
 #BuildRequires:	rpm-perlprov
 Requires:	cacti
@@ -26,7 +26,7 @@ Wtyczka do Cacti pozwalająca oglądać raporty w oparciu o dane z
 przepływów Netflow.
 
 %prep
-%setup -q -n %{namesrc}
+%setup -q -c
 
 %install
 rm -rf $RPM_BUILD_ROOT

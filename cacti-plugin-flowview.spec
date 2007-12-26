@@ -10,7 +10,7 @@ Group:		Applications/WWW
 Source0:	http://mirror.cactiusers.org/downloads/plugins/%{namesrc}-%{version}.zip
 # Source0-md5:	858dcbeb72e206021f8197424492641b
 URL:		http://www.cactiusers.org/
-#BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-perlprov
 Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -18,8 +18,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
 
 %description
-Plugin for Cacti - This plugin allows you to see reports based off
-the data in your Netflow flows.
+Plugin for Cacti - This plugin allows you to see reports based off the
+data in your Netflow flows.
 
 %description -l pl.UTF-8
 Wtyczka do Cacti pozwalająca oglądać raporty w oparciu o dane z
@@ -31,7 +31,7 @@ przepływów Netflow.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{webcactipluginroot}
-cp -aRf * $RPM_BUILD_ROOT%{webcactipluginroot}
+cp -a * $RPM_BUILD_ROOT%{webcactipluginroot}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

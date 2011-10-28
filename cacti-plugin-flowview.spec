@@ -1,23 +1,38 @@
+# TODO
+# - bundles external Open Flash Chart - PHP libraries
 %define		plugin flowview
-%include	/usr/lib/rpm/macros.perl
+%define		php_min_version 5.2.0
+%include	/usr/lib/rpm/macros.php
 Summary:	Plugin for Cacti -  Flowview
 Summary(pl.UTF-8):	Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-%{plugin}
-Version:	0.5.2
+Version:	1.1
 Release:	1
 License:	GPL
 Group:		Applications/WWW
-Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.zip
-# Source0-md5:	d5c22b7e46b192a39b993a0d9ba96628
-URL:		http://www.cactiusers.org/
-BuildRequires:	rpm-perlprov
-BuildRequires:	unzip
+Source0:	http://docs.cacti.net/_media/plugin:%{plugin}-v%{version}-1.tgz
+# Source0-md5:	e165e0d4cb68c1033bae131a67c89967
+URL:		http://docs.cacti.net/plugin:flowview
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	cacti
+Requires:	cacti(pia) >= 2.9
+Requires:	php-common >= 4:%{php_min_version}
+Requires:	php-date
+Requires:	php-json
+Requires:	php-mbstring
+Requires:	php-pcre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		cactidir		/usr/share/cacti
 %define		plugindir		%{cactidir}/plugins/%{plugin}
+
+# bad depsolver
+# pear JSON will not be needed, we R json ext
+%define		_noautopear	pear(ofc_bar_base.php) pear(JSON.php)
+
+# put it together for rpmbuild
+%define		_noautoreq	%{?_noautophp} %{?_noautopear}
 
 %description
 Plugin for Cacti - This plugin allows you to see reports based off the
@@ -28,12 +43,13 @@ Wtyczka do Cacti pozwalająca oglądać raporty w oparciu o dane z
 przepływów Netflow.
 
 %prep
-%setup -q -c
+%setup -qc
+mv %{plugin}/{LICENSE,README} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{plugindir}
-cp -a . $RPM_BUILD_ROOT%{plugindir}
+cp -a %{plugin}/* $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

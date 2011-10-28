@@ -15,7 +15,7 @@ Source0:	http://docs.cacti.net/_media/plugin:%{plugin}-v%{version}-1.tgz
 URL:		http://docs.cacti.net/plugin:flowview
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	cacti
-Requires:	cacti(pia) >= 2.9
+Requires:	cacti(pia) >= 2.0
 Requires:	php-common >= 4:%{php_min_version}
 Requires:	php-date
 Requires:	php-json

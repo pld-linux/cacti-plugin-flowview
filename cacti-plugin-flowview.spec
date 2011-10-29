@@ -7,7 +7,7 @@ Summary:	Plugin for Cacti -  Flowview
 Summary(pl.UTF-8):	Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-%{plugin}
 Version:	1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://docs.cacti.net/_media/plugin:%{plugin}-v%{version}-1.tgz
@@ -29,7 +29,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # bad depsolver
 # pear JSON will not be needed, we R json ext
-%define		_noautopear	pear(ofc_bar_base.php) pear(JSON.php)
+%define		_noautopear	pear pear(JSON.php)
 
 # put it together for rpmbuild
 %define		_noautoreq	%{?_noautophp} %{?_noautopear}

@@ -2,7 +2,6 @@
 # - bundles external Open Flash Chart - PHP libraries
 %define		plugin flowview
 %define		php_min_version 5.2.0
-%include	/usr/lib/rpm/macros.php
 Summary:	Plugin for Cacti -  Flowview
 Summary(pl.UTF-8):	Wtyczka do Cacti -  Flowview
 Name:		cacti-plugin-%{plugin}
